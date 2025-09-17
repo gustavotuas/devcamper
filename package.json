@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start":"NODE_ENV=production node server",
+    "start": "NODE_ENV=production node server",
     "dev": "nodemon server"
   },
   "author": "Gustavo Tua",
@@ -12,6 +12,7 @@
   "dependencies": {
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
+    "morgan": "^1.10.1",
     "nodemon": "^3.1.10"
   }
 }
