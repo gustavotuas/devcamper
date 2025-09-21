@@ -11,6 +11,8 @@ const courseRouter = require("./courses");
 
 const router = express.Router();
 
+const { isAuth } = require("../middleware/auth");
+
 // Re-route into other resource router
 router.use("/:bootcampId/courses", courseRouter);
 
@@ -18,10 +20,10 @@ router.route("/").get(getBootcamps);
 
 router.route("/:id").get(getBootcamp);
 
-router.route("/").post(createBootcamp);
+router.route("/").post(isAuth, createBootcamp);
 
-router.route("/:id").put(updateBootcamp);
+router.route("/:id").put(isAuth, updateBootcamp);
 
-router.route("/:id").delete(deleteBootcamp);
+router.route("/:id").delete(isAuth, deleteBootcamp);
 
 module.exports = router;
